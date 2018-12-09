@@ -13,3 +13,8 @@
 
 ## 3. .gitignore
 - [node.js를 위한 gitignore 정보](https://github.com/github/gitignore/blob/master/Node.gitignore)
+- package-lock.json 도 추가함
+
+## 4. require()
+- const express = require('express')
+- node_modules 내에 express 모듈을 사용하겠다.
