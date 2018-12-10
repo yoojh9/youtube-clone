@@ -23,6 +23,7 @@
 - modern javascript 코드를 normal javascript로 변경해줌
 - $ npm install @babel/node
 - babel은 다양한 작은 모듈들로 구성되어 있고, 다양한 모듈을 담는 일종의 상자 역할을 하며, 코드를 컴파일 하기 위해 작은 모듈(presets)을 사용한다.
+- package.json 내의 start script를 "babel-node index.js"로 변경한다.
 
 #### 5-1. babel presets
 - 해당 프로젝트에서는 env preset을 사용한다. [babel presets](https://babeljs.io/docs/en/babel-preset-env)에는 여러 stage 별 presets이 있지만 babel-preset-env를 통해 모든 stage를 대체할 수 있다.

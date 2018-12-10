@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "cloning youtube with vanila and node.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "babel-node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/yoojh9/youtube-clone#readme",
   "dependencies": {
+    "@babel/node": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
     "express": "^4.16.4"
   }
 }
