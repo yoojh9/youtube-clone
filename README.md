@@ -40,6 +40,12 @@
 
 ## 7. nodemon
 - nodemon을 사용하게 되면 변경 사항이 있을 때 마다 자동으로 restart 됨.
+- "start": "nodemon --exec babel-node index.js" 해당 스크립트를 이용할 경우, 저장 시 서버가 2번 start 된다. 이유는 일단 start 된 후 babel-node를 실행하게 되는데, bebel-node를 실행하게 되면 코드가 변경되므로 restart 되게 된다.
+- "start": "nodemon --exec babel-node index.js --delay 2" 와 같이 delay를 주어, babel이 수행하는 transformation이 끝나도록 기다린다. 
+
+## 8. express core : Middlewares
+- express 프레임워크의 핵심 기술 중 하나로, 이름처럼 요청에 대한 응답 과정 중간에 껴서 어떤 동작을 해주는 프로그램이다.
+- express는 요청이 들어올 때 그에 따른 응답을 보내는데 응답을 보내기 전에 미들웨어가 지정한 동작을 수행한다.
 
 # 실행 방법
 - $ npm install

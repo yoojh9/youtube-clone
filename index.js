@@ -10,8 +10,23 @@ const handleHome = (req, res) =>  res.send('hello from home');
 
 const handleProfile = (req, res) => res.send("you are on my profile");
 
+// middleware
+const betweenGlobal = (req, res, next) => {
+    console.log("Between");
+    next(); // maybe handleHome();
+}
 
-app.get("/", handleHome);
+const betweenProfile = (req, res, next) => {
+    console.log("Between Profile");
+    next();
+}
+
+app.use(betweenGlobal);   // /와 /profile 모두 설정되는 middleware
+
+app.get("/", handleHome); 
+
+app.use(betweenProfile);    // /profile에만 설정되는 middleware
+
 app.get("/profile", handleProfile);
 
 app.listen(PORT, handleListening);
