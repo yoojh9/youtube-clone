@@ -22,17 +22,24 @@
 ## 5. babel
 - modern javascript 코드를 normal javascript로 변경해줌
 - $ npm install @babel/node
+- $ npm install @babel/core
 - babel은 다양한 작은 모듈들로 구성되어 있고, 다양한 모듈을 담는 일종의 상자 역할을 하며, 코드를 컴파일 하기 위해 작은 모듈(presets)을 사용한다.
 - package.json 내의 start script를 "babel-node index.js"로 변경한다.
 
 #### 5-1. babel presets
 - 해당 프로젝트에서는 env preset을 사용한다. [babel presets](https://babeljs.io/docs/en/babel-preset-env)에는 여러 stage 별 presets이 있지만 babel-preset-env를 통해 모든 stage를 대체할 수 있다.
-- $ npm install --save-dev @babel/preset-env
+- $ npm install @babel/preset-env
 
 #### 5-2. .babelrc
 - babel에게 어떠한 정보를 전달해주지 않는 이상 babel은 아무 작업도 수행하지 않는 상자에 불과하다
 - 이 때문에 babel에게 설정 정보를 전달해주어야 하며, .babelrc 파일을 이용하여 전달할 수 있다.
 
+## 6. dependencies vs devDependencies
+- dependencies: 프로젝트가 run 되기 위해 필요한 것. project needs
+- devDependencies : 프로젝트가 실행되는 것과는 관계 없이 개발 시 필요. programmer needs ( $ npm install nodemon -D )
+
+## 7. nodemon
+- nodemon을 사용하게 되면 변경 사항이 있을 때 마다 자동으로 restart 됨.
 
 # 실행 방법
 - $ npm install
