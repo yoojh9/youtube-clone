@@ -1,4 +1,7 @@
 import express from "express";
+import morgan from "morgan";
+import helmet from "helmet";
+import cookieParser from "cookie-parser";
 //const express = require('express')
 
 const app = express()  // execute express
@@ -10,22 +13,13 @@ const handleHome = (req, res) =>  res.send('hello from home');
 
 const handleProfile = (req, res) => res.send("you are on my profile");
 
-// middleware
-const betweenGlobal = (req, res, next) => {
-    console.log("Between");
-    next(); // maybe handleHome();
-}
-
-const betweenProfile = (req, res, next) => {
-    console.log("Between Profile");
-    next();
-}
-
-app.use(betweenGlobal);   // /와 /profile 모두 설정되는 middleware
+app.use(morgan("dev"));   // /와 /profile 모두 설정되는 middleware
+app.use(helmet());
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get("/", handleHome); 
-
-app.use(betweenProfile);    // /profile에만 설정되는 middleware
 
 app.get("/profile", handleProfile);
 

@@ -47,6 +47,24 @@
 - express 프레임워크의 핵심 기술 중 하나로, 이름처럼 요청에 대한 응답 과정 중간에 껴서 어떤 동작을 해주는 프로그램이다.
 - express는 요청이 들어올 때 그에 따른 응답을 보내는데 응답을 보내기 전에 미들웨어가 지정한 동작을 수행한다.
 
+#### 8-1. morgan
+- logging 관련 미들웨어
+- $ npm install morgan
+
+#### 8-2. helmet
+- Helmet을 이용하면 HTTP 헤더를 적절히 설정하여 몇 가지 잘 알려진 웹 취약성으로부터 앱을 보호할 수 있다.
+- $ npm install helmet
+
+#### 8-3. cookie-parser
+- Cookie 헤더를 파싱하고 req.cookie에 쿠키 이름으로 된 키로 객체를 생성한다.
+- $ npm install cookie-parser
+
+#### 8-4. body-parser
+- 클라이언트 POST request data의 body로부터 파라미터를 편리하게 추출
+- $ npm install body-parser
+- 하지만 body-parser는 express 4.16.0 릴리즈 이후로 express 내에 추가되었으므로, bodyParser.json()을 이용하기보다는 express.json()을 사용하길 권장한다.
+- [express 관련 document](https://expressjs.com/en/4x/api.html#express.json)
+
 # 실행 방법
 - $ npm install
 - $ npm start
