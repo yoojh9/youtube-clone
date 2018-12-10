@@ -18,3 +18,7 @@
 ## 4. require()
 - const express = require('express')
 - node_modules 내에 express 모듈을 사용하겠다.
+
+## 5. 실행 방법
+- $ npm install
+- $ npm start
