@@ -7,8 +7,9 @@ import videoRouter from "./routers/videoRouter";
 import globalRouter from "./routers/globalRouter";
 import routes from "./routes";
 
-const app = express();
+const app = express();      // execute express
 
+// middlewares
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(cookieParser());
