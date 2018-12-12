@@ -10,6 +10,7 @@
 - $ npm install pug
 - pug 엔진을 사용하기 위해 app.set("view engine", "pug"); 을 app.js에 추가한다.
 - 추가로 controller에서 전달하는 응답을 res.render("home"); 과 같이 변경한다.
+- javascript를 추가하고 싶다면 #{new Date().getFullYear()} 처럼 추가하면 된다.
 
 ## 3. pug를 이용한 html 모듈화
 - 공통 부분 (header나 footer)와 같은 내용은 layout으로 만들고, 다른 pug 페이지에서 extends 하여 사용한다.
@@ -28,6 +29,11 @@ html
 ```
 
 - main.pug를 extends하여  block content를 override하면 block 하위의 내용을 변경할 수 있다. 
+- main.pug 역시 include 하여 다른 pug 파일을 포함시킬 수 있다.
+
+## 4. res.locals
+- view에 routes 객체나 그 외 config 데이터를 전달하기 위해 사용. 
+- app.js에 app.use(localMiddleware); 로 middleware로 설정했고, middlewares.js에 localMiddleware()를 구현했다.
 
 
 # 실행 방법
