@@ -9,6 +9,8 @@ import routes from "./routes";
 
 const app = express();      // execute express
 
+app.set("view engine", "pug");
+
 // middlewares
 app.use(morgan("dev"));
 app.use(helmet());
