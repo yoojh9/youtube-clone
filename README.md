@@ -1,44 +1,69 @@
 # youtube-clone
 
-## 1. app.set(name, value)
-- config 값을 세팅할 수 있음
-- [app.set(name, value)](https://expressjs.com/en/4x/api.html#app.set)
-- 위의 링크를 통해 views property의 값이 디폴트로 '/views' 인 것은 알 수 있다. 때문에 루트 디렉토리에 views 디렉토리를 생성하고 뷰를 views 디렉토리 하위에 만들었다.
+## 1. npm
+- node package manager
+- node.js를 설치 시 자동으로 설치 됨
+- $npm init  명령어로 프로젝트에 npm 패키지 매니저를 사용하도록 설정
+- npm init으로 package.json이 생성된다.
 
-## 2. Pug
-- Node.js에서 사용하는 템플릿 엔진
-- $ npm install pug
-- pug 엔진을 사용하기 위해 app.set("view engine", "pug"); 을 app.js에 추가한다.
-- 추가로 controller에서 전달하는 응답을 res.render("home"); 과 같이 변경한다.
-- javascript를 추가하고 싶다면 #{new Date().getFullYear()} 처럼 추가하면 된다.
+## 2. express 
+- node.js를 이용하여 웹서버를 구축하기 위해 사용하는 프레임워크
+- 매우 안정적임
+- $npm install express
 
-## 3. pug를 이용한 html 모듈화
-- 공통 부분 (header나 footer)와 같은 내용은 layout으로 만들고, 다른 pug 페이지에서 extends 하여 사용한다.
-- layouts/main.pug은 blue print의 역할을 하며 내용은 아래와 같다.
+## 3. .gitignore
+- [node.js를 위한 gitignore 정보](https://github.com/github/gitignore/blob/master/Node.gitignore)
+- package-lock.json 도 추가함
 
-```
-doctype html
-html
-    head
-        title WeTube
-    body
-        main
-            block content
-        footer
-            span &copy; WeTube
-```
+## 4. require()
+- const express = require('express')
+- node_modules 내에 express 모듈을 사용하겠다.
 
-- main.pug를 extends하여  block content를 override하면 block 하위의 내용을 변경할 수 있다. 
-- main.pug 역시 include 하여 다른 pug 파일을 포함시킬 수 있다.
+## 5. babel
+- modern javascript 코드를 normal javascript로 변경해줌
+- $ npm install @babel/node
+- $ npm install @babel/core
+- babel은 다양한 작은 모듈들로 구성되어 있고, 다양한 모듈을 담는 일종의 상자 역할을 하며, 코드를 컴파일 하기 위해 작은 모듈(presets)을 사용한다.
+- package.json 내의 start script를 "babel-node index.js"로 변경한다.
 
-## 4. res.locals - global config 설정
-- view 마다 공통으로 가지고 있는 global config들을 설정할 수 있다.
-- view에 routes 객체나 그 외 config 데이터를 전달하기 위해 사용.
-- app.js에 app.use(localMiddleware); 로 middleware로 설정했고, middlewares.js에 localMiddleware()를 구현했다.
+#### 5-1. babel presets
+- 해당 프로젝트에서는 env preset을 사용한다. [babel presets](https://babeljs.io/docs/en/babel-preset-env)에는 여러 stage 별 presets이 있지만 babel-preset-env를 통해 모든 stage를 대체할 수 있다.
+- $ npm install @babel/preset-env
 
-## 5. controller -> view 로 데이터 전달
-- controller에서 view render 시 object를 추가한다.
-- res.render("home", {pageTitle : "Home"})
+#### 5-2. .babelrc
+- babel에게 어떠한 정보를 전달해주지 않는 이상 babel은 아무 작업도 수행하지 않는 상자에 불과하다
+- 이 때문에 babel에게 설정 정보를 전달해주어야 하며, .babelrc 파일을 이용하여 전달할 수 있다.
+
+## 6. dependencies vs devDependencies
+- dependencies: 프로젝트가 run 되기 위해 필요한 것. project needs
+- devDependencies : 프로젝트가 실행되는 것과는 관계 없이 개발 시 필요. programmer needs ( $ npm install nodemon -D )
+
+## 7. nodemon
+- nodemon을 사용하게 되면 변경 사항이 있을 때 마다 자동으로 restart 됨.
+- "start": "nodemon --exec babel-node index.js" 해당 스크립트를 이용할 경우, 저장 시 서버가 2번 start 된다. 이유는 일단 start 된 후 babel-node를 실행하게 되는데, bebel-node를 실행하게 되면 코드가 변경되므로 restart 되게 된다.
+- "start": "nodemon --exec babel-node index.js --delay 2" 와 같이 delay를 주어, babel이 수행하는 transformation이 끝나도록 기다린다. 
+
+## 8. express core : Middlewares
+- express 프레임워크의 핵심 기술 중 하나로, 이름처럼 요청에 대한 응답 과정 중간에 껴서 어떤 동작을 해주는 프로그램이다.
+- express는 요청이 들어올 때 그에 따른 응답을 보내는데 응답을 보내기 전에 미들웨어가 지정한 동작을 수행한다.
+
+#### 8-1. morgan
+- logging 관련 미들웨어
+- $ npm install morgan
+
+#### 8-2. helmet
+- Helmet을 이용하면 HTTP 헤더를 적절히 설정하여 몇 가지 잘 알려진 웹 취약성으로부터 앱을 보호할 수 있다.
+- $ npm install helmet
+
+#### 8-3. cookie-parser
+- Cookie 헤더를 파싱하고 req.cookie에 쿠키 이름으로 된 키로 객체를 생성한다.
+- $ npm install cookie-parser
+
+#### 8-4. body-parser
+- 클라이언트 POST request data의 body로부터 파라미터를 편리하게 추출
+- $ npm install body-parser
+- 하지만 body-parser는 express 4.16.0 릴리즈 이후로 express 내에 추가되었으므로, bodyParser.json()을 이용하기보다는 express.json()을 사용하길 권장한다.
+- [express 관련 document](https://expressjs.com/en/4x/api.html#express.json)
 
 # 실행 방법
 - $ npm install
@@ -48,3 +73,4 @@ html
 
 ---  
 ### 참고
+- [Jbee - \(번역\)Babel에 대한 모든 것 ](https://jaeyeophan.github.io/2017/05/16/Everything-about-babel/)
