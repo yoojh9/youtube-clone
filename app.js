@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(localMiddleware);
 
+// router
 app.use(routes.home, globalRouter);
 app.use(routes.users, userRouter); 
 app.use(routes.videos, videoRouter); 
