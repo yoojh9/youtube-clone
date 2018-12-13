@@ -31,10 +31,14 @@ html
 - main.pug를 extends하여  block content를 override하면 block 하위의 내용을 변경할 수 있다. 
 - main.pug 역시 include 하여 다른 pug 파일을 포함시킬 수 있다.
 
-## 4. res.locals
-- view에 routes 객체나 그 외 config 데이터를 전달하기 위해 사용. 
+## 4. res.locals - global config 설정
+- view 마다 공통으로 가지고 있는 global config들을 설정할 수 있다.
+- view에 routes 객체나 그 외 config 데이터를 전달하기 위해 사용.
 - app.js에 app.use(localMiddleware); 로 middleware로 설정했고, middlewares.js에 localMiddleware()를 구현했다.
 
+## 5. controller -> view 로 데이터 전달
+- controller에서 view render 시 object를 추가한다.
+- res.render("home", {pageTitle : "Home"})
 
 # 실행 방법
 - $ npm install
