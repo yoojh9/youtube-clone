@@ -8,6 +8,7 @@
 ## 2. router 관리
 - routes 폴더 내에 router 파일들 설정
 - routes에 url 관련 정보 설정
+- router들은 route의 복잡함을 줄여주는 역할을 한다.
 
 
 
