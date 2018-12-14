@@ -70,6 +70,9 @@
 - 하지만 body-parser는 express 4.16.0 릴리즈 이후로 express 내에 추가되었으므로, bodyParser.json()을 이용하기보다는 express.json()을 사용하길 권장한다.
 - [express 관련 document](https://expressjs.com/en/4x/api.html#express.json)
 
+## 9. mixin
+- mixin을 이용하면 pug에서 재사용 가능한 block을 생성할 수 있다.
+
 # 실행 방법
 - $ npm install
 - $ npm start
