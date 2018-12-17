@@ -40,12 +40,3 @@ html
 ## 5. controller -> view 로 데이터 전달
 - controller에서 view render 시 object를 추가한다.
 - res.render("home", {pageTitle : "Home"})
-
-# 실행 방법
-- $ npm install
-- $ npm start
-
-
-
----  
-### 참고
