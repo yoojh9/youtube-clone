@@ -13,7 +13,11 @@ export const search = (req, res) => {
     res.render("search", { pageTitle: "Search", searchingBy, videos });
     // searchingBy: searchingBy 와 같이 property 이름과 변수 이름이 같을 경우 searchingBy 하나로 표현
 }
-export const upload = (req, res) => res.render("upload", { pageTitle: "Upload" });
+export const getUpload = (req, res) => res.render("upload", { pageTitle: "Upload" });
+
+export const postUpload = (req, req) => {
+    console
+}
 
 export const videoDetail = (req, res) => res.render("videoDetail", { pageTitle: "Video Detail" });
 
