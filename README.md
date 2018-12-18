@@ -32,10 +32,14 @@ html
 - main.pug 역시 include 하여 다른 pug 파일을 포함시킬 수 있다.
 - 해당 프로젝트에서는 /partial/header.pug, /partial/footer.pug를 만들어 main.pug에서 include 하였다.
 
-## 4. res.locals - global config 설정
-- view 마다 공통으로 가지고 있는 global config들을 설정할 수 있다.
-- view에 routes 객체나 그 외 config 데이터를 전달하기 위해 사용.
+## 4. res.locals
+- [res.locals 레퍼런스](http://expressjs.com/ko/api.html#res.locals)
+- 컨트롤러에 있는 정보를 뷰 템플릿에 추가할 수 있다.
+- res.locals는 전역적으로 사용할 수 있는 변수를 추가하기 위해 사용하며 모든 템플릿, 뷰에서 사용 가능하다.
+- view에 routes 객체나 그 외 데이터를 전달하기 위해 사용할 수 있다
 - app.js에 app.use(localMiddleware); 로 middleware로 설정했고, middlewares.js에 localMiddleware()를 구현했다.
+- 미들웨어에서 res.locals.siteName="weTube"; 와 같이 설정하면 템플릿에서는 #{siteName}과 같이 변수처럼 접근 가능하다.
+
 
 ## 5. controller -> view 로 데이터 전달
 - controller에서 view render 시 object를 추가한다.
