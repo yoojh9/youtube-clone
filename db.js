@@ -1,50 +1,22 @@
-export const videos = [
+import mongoose from "mongoose";
+
+mongoose.connect(
+    "mongodb://localhost:27017/we-tube", 
     {
-        id: 324393,
-        title: "awesome Video",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        creator: {
-            id: 123123,
-            name: "Jeonghyun",
-            email: "yoojh9@gmail.com"
-        }
-    },
-    {
-        id: 324394,
-        title: "super Video",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        creator: {
-            id: 123123,
-            name: "Jeonghyun",
-            email: "yoojh9@gmail.com"
-        }
-    },
-    {
-        id: 55555,
-        title: "nice Video",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        creator: {
-            id: 123123,
-            name: "Jeonghyun",
-            email: "yoojh9@gmail.com"
-        }
-    },
-    {
-        id: 11111,
-        title: "perfect Video",
-        description: "This is something I love",
-        views: 24,
-        videoFile: "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-        creator: {
-            id: 123123,
-            name: "Jeonghyun",
-            email: "yoojh9@gmail.com"
-        }
+        useNewUrlParser: true,
+        useFindAndModify: false
     }
-]
+);
+
+const db = mongoose.connection;
+
+const handleOpen = () => {
+    console.log("Connected to DB");
+}
+
+const handleError = (error) => {
+    console.error(`Error on DB connection: ${error}`);
+}
+
+db.once("open", handleOpen);
+db.on("error", handleError)

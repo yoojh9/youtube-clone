@@ -18,6 +18,10 @@
 - 즉 MongoDB에 있는 데이터를 javascript 객체로 사용할 수 있게 해준다.
 - $ npm install mongoose
 
+
+## 3. dotenv
+- $ npm install dotenv
+
 ---  
 ### 참고
 - [windows에 mongoDB , mongodb compass 설치하기](https://blog.hanumoka.net/2018/10/18/mongodb-20181018-mongodb-install-at-windows/)
