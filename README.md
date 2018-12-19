@@ -11,7 +11,7 @@ Cloning Youtube with Vanila and NodeJS
 - [pug branch 참고](https://github.com/yoojh9/youtube-clone/tree/pug)
 
 ### 4. mongodb
-- [mongodb branch ](https://github.com/yoojh9/youtube-clone/tree/mongodb)
+- [mongodb branch 참고](https://github.com/yoojh9/youtube-clone/tree/mongodb)
 
 
 ## Pages:
