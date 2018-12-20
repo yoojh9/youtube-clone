@@ -33,6 +33,12 @@ $ mongod
 - js 파일 내에서 process.env.{key}와 같은 형태로 사용한다.
 - $ npm install dotenv
 
+
+## 4. schema 설정
+- models 디렉토리 하위에 스키마를 설정함
+- schema 관련한 자세한 설명은 [mongoose 레퍼런스](https://mongoosejs.com/docs/guide.html) 참고
+
+
 ---  
 ### 참고
 - [windows에 mongoDB , mongodb compass 설치하기](https://blog.hanumoka.net/2018/10/18/mongodb-20181018-mongodb-install-at-windows/)
