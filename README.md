@@ -56,6 +56,11 @@ $ . ~/.bash_profile
 - async를 이용하면 비동기 코드를 동기식으로 변경할 수 있음
 - function 키워드 앞에 async만 붙여주면 되고 비동기로 처리되는 부분 앞에 await만 붙여주면 된다.
 
+## 6. multer
+- Multer는 파일 업로드를 위해 사용되는 multipart/form-data 를 다루기 위한 node.js 의 미들웨어이다.
+- [Multer 레퍼런스](https://github.com/expressjs/multer/blob/master/doc/README-ko.md)
+- $ npm install multer
+
 ---  
 ### 참고
 - [windows에 mongoDB , mongodb compass 설치하기](https://blog.hanumoka.net/2018/10/18/mongodb-20181018-mongodb-install-at-windows/)
