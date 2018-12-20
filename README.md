@@ -49,7 +49,12 @@ $ . ~/.bash_profile
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
     }]
-```  
+``` 
+
+## 5. async
+- https://blueshw.github.io/2018/02/27/async-await/
+- async를 이용하면 비동기 코드를 동기식으로 변경할 수 있음
+- function 키워드 앞에 async만 붙여주면 되고 비동기로 처리되는 부분 앞에 await만 붙여주면 된다.
 
 ---  
 ### 참고
@@ -57,3 +62,4 @@ $ . ~/.bash_profile
 - [인코덤 - MongoDB 설치](http://www.incodom.kr/MongoDB_%EC%84%A4%EC%B9%98)
 - [mac에 mongodb 설치하기](http://hong.adfeel.info/backend/mac%EC%97%90-mongodb-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)
 - [velopert - [Node.JS] 강좌 11편: Express와 Mongoose를 통해 MongoDB와 연동하여 RESTful API 만들기](https://velopert.com/594)
+- [async, await를 사용하여 비동기 javascript를 동기식으로 만들자](https://blueshw.github.io/2018/02/27/async-await/)
