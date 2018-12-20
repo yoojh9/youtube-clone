@@ -37,7 +37,20 @@ $ mongod
 ## 4. schema 설정
 - models 디렉토리 하위에 스키마를 설정함
 - schema 관련한 자세한 설명은 [mongoose 레퍼런스](https://mongoosejs.com/docs/guide.html) 참고
+- Video와 Comment 모델은 서로 연결을 해주어야 되는데, Comment에 Video를 연결할 경우에는 Video의 ObjectId를 model에 추가하고 Video에 Comment를 연결할 경우 Comment는 여러개 일 수 있으므로 ObjectId의 array를 추가한다.
 
+```  
+// Comment.js에서 Video 모델을 연결
+    video: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Video"
+    }
+// Video.js에서 Comment 모델을 연결
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
+    }]
+```  
 
 ---  
 ### 참고
