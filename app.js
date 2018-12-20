@@ -10,10 +10,10 @@ import userRouter from "./routers/userRouter";
 
 const app = express();      // execute express
 
-app.set("view engine", "pug");
-
 // middlewares
 app.use(helmet());
+app.set("view engine", "pug");
+app.use("/uploads", express.static("uploads"))
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

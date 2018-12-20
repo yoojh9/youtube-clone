@@ -20,6 +20,21 @@
 $ . ~/.bash_profile
 ```
 
+#### 3. mongodb 명령어
+- mongodb에 저장된 model을 관리하기 위한 명령어
+- $ cd /usr/local/mongodb/bin
+- $ ./mongo
+
+```  
+> use we-tube // database 이름
+switched to db we-tube
+> show collections  // collection은 model과 같음
+videos
+> db.videos.remove({})
+WriteResult({ "nRemoved" : 1 })
+```
+
+
 ## 2. Mongoose
 - Mongoose는 MongoDB 기반 ODM(Object Data Mapping) Node.js 전용 라이브러리이다. 
 - ODM은 데이터베이스와 객체지향 프로그래밍 언어 사이에 호환되지 않는 데이터를 변환하는 프로그래밍 기법이다.
@@ -29,8 +44,17 @@ $ . ~/.bash_profile
 
 ## 3. dotenv
 - dotenv를 통해 .env 파일 내 'key:value' 쌍으로 된 데이터들을 로드할 수 있음
-- js 파일 내에서 process.env.{key}와 같은 형태로 사용한다.
 - $ npm install dotenv
+- js 파일 내에서 process.env.{key}와 같은 형태로 사용한다.
+- .env에는 다음과 같이 작성한다.
+
+```    
+MONGO_URL="mongodb://localhost:27017/we-tube"
+PORT = 4000
+```  
+- .gitignore에 등록되어 있으므로 .env 파일은 따로 github에 올라가있지 않으므로, 해당 프로젝트를 pull 받을 시에는 따로 .env를 등록해줘야 한다.
+
+
 
 
 ## 4. schema 설정
@@ -60,6 +84,9 @@ $ . ~/.bash_profile
 - Multer는 파일 업로드를 위해 사용되는 multipart/form-data 를 다루기 위한 node.js 의 미들웨어이다.
 - [Multer 레퍼런스](https://github.com/expressjs/multer/blob/master/doc/README-ko.md)
 - $ npm install multer
+- middleware.js에 const multerVideo = multer({dest: "uploads/videos/"}) 와 같이 적용하고
+- app.js에서 '/upload'의 static 경로를 upload 디렉토리로 매핑시킨다. app.use("/uploads", express.static("uploads"))
+- 추후에는 AWS S3와 연결할 예정
 
 ---  
 ### 참고

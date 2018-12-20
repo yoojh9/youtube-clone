@@ -78,7 +78,7 @@ typings/
 #DynamoDB Local files 
 .dynamodb/
 
-package-lock.json
+
 
 # video sample file
-videos/
+uploads
