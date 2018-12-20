@@ -15,10 +15,9 @@
 
 #### 2. mac mongodb 설치
 - [mac에 mongodb 설치하기](http://hong.adfeel.info/backend/mac%EC%97%90-mongodb-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)
-
+- 위의 링크와 같이 설치한 후 수정한 .bash_profile을 적용한다  
 ```
-$ cd /usr/local/mongodb/bin
-$ mongod
+$ . ~/.bash_profile
 ```
 
 ## 2. Mongoose
