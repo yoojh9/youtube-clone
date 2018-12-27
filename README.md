@@ -38,6 +38,7 @@ videos
 > db.videos.remove({})
 WriteResult({ "nRemoved" : 1 })
 ```
+<br>
 
 ## 2. Mongoose
 
@@ -99,7 +100,11 @@ PORT = 4000
 - 문법적으로 틀린게 있으면 알려줌
 - \$ npm install eslint -g
 - \-g 옵션을 붙여 설치하게 되면, 전역으로 설치할 수 있다. 전역으로 설치하는 패키지는 보통 개발 과정에서 사용하는, 터미널에서 실행하는 도구들이다
+- 전역으로 설치하였다 하더라도 개별 프로젝트에서 사용하기 위해서는 로컬 설치가 필요하므로 아래의 명령어를 실행한다.
+- \$ npm install --save-dev eslint
+
 - eslint 설정 방법
+
 
 ```
 $ eslint --init
