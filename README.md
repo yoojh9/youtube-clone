@@ -131,7 +131,7 @@ $ eslint --init
 
 ## 9. eslint-plugin-prettier
 
--[recomment configuration](https://github.com/prettier/eslint-plugin-prettier#recommended-configuration)
+- [recommended configuration](https://github.com/prettier/eslint-plugin-prettier#recommended-configuration)
 
 - \$ npm install --save-dev eslint-plugin-prettier
 - \$ npm install --save-dev eslint-config-prettier
