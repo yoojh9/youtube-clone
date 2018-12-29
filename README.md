@@ -4,6 +4,7 @@
 
 - 코드의 양이 많아지면 코드의 유지와 보수가 쉽도록 코드를 모듈로 나누어 관리하는 모듈 시스템이 필요한데 javascript는 언어 자체가 지원하는 모듈 시스템이 없다. 이런 한계를 극복하기 위해 여러가지 도구를 활용하는데 그 도구 중에 하나가 webpack이다.
 - webpack은 module bundler로서 많은 파일들을 webpack에 전달하면 webpack은 그 파일들을 완전히 호환이 되는 static 파일들로 변환해 준다.
+- client-side 모듈 빌더이자 모듈 로더
 
 #### 1. 설치 및 설정
 
@@ -114,6 +115,23 @@ $ npm install -D css-loader postcss-loader sass-loader
 - 브라우저는 Sass의 문법을 알지 못하기 때문에 Sass(.scss) 파일을 css 파일로 컴파일(트랜스파일링)하여야 한다. 따라서 Sass 환경의 설치가 필요하다.
 - Node.js 환경에서 사용하기 위해서는 node-sass를 설치하여야 한다.
 - \$ npm install node-sass
+
+<br><br>
+
+## 5. ES6 with webpack - babel-laoder
+
+- webpack이 Babel을 이용하여 자바스크립트를 트랜스파일할 수 있도록 기능을 제공
+- \$ npm install -D babel-loader
+- [babel/polyfill 설명 참고](https://github.com/yoojh9/youtube-clone/blob/expressjs/README.md#5-3-babel-polyfill)
+- [babel/polyfill 사용법](https://babeljs.io/docs/en/babel-polyfill)
+
+## 6. 실행 방법
+
+- 각각 다른 터미널에서 실행한다.
+- \$ npm run dev:server
+- \$ npm run dev:assets
+- dev:assets을 실행하게 되면 webpack -w 옵션을 통해 css 파일이나 클라이언트 쪽의 js 코드 변경사항을 감지하고 자동 반영함. 즉 뭔가 바꿀 때 마다 webpack을 다시 실행하지 않아도 됨
+- 단 webpack.config 정보를 변경했을 경우에는 dev:assets 을 재실행한다.
 
 ---
 

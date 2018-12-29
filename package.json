@@ -4,7 +4,7 @@
   "description": "cloning youtube with vanila and node.js",
   "scripts": {
     "dev:server": "nodemon --exec babel-node init.js --delay 2",
-    "dev:assets": "WEBPACK_ENV=development webpack",
+    "dev:assets": "WEBPACK_ENV=development webpack -w",
     "build:assets": "WEBPACK_ENV=production webpack"
   },
   "repository": {
@@ -20,6 +20,7 @@
   "dependencies": {
     "@babel/core": "^7.2.0",
     "@babel/node": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.0",
     "autoprefixer": "^9.4.3",
     "cookie-parser": "^1.4.3",
@@ -33,6 +34,7 @@
     "pug": "^2.0.3"
   },
   "devDependencies": {
+    "babel-loader": "^8.0.4",
     "css-loader": "^2.1.0",
     "eslint": "^5.11.0",
     "eslint-config-airbnb-base": "^13.1.0",
