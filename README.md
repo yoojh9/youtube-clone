@@ -28,12 +28,21 @@
 - package.json 내의 start script를 "babel-node index.js"로 변경한다.
 
 #### 5-1. babel presets
+- babel-preset-env 프리셋을 통해 모든 stage 프리셋을 대체할 수 있다.
+- node 7버전부터는 stage-0, stage-1, stage-2, stage-3은 deprecated 되었다.
 - 해당 프로젝트에서는 env preset을 사용한다. [babel presets](https://babeljs.io/docs/en/babel-preset-env)
 - $ npm install @babel/preset-env
 
 #### 5-2. .babelrc
 - babel에게 어떠한 정보를 전달해주지 않는 이상 babel은 아무 작업도 수행하지 않는 상자에 불과하다
 - 이 때문에 babel에게 설정 정보를 전달해주어야 하며, .babelrc 파일을 이용하여 전달할 수 있다.
+
+#### 5-3. babel polyfill
+- polyfill : 충전재 / 브라우저의 구멍을 매꾸어주는 자바스크립트 파일이라고 생각하면 된다
+- 바벨 그 자체로는 ES2015의 새로운 객체(Promise, Map, Set 등등)과 메소드(Array.find, Object.assign 등등)을 사용할 수 없다. 
+- 해당 문법은 ES2015에서 처음 등장하 것이므로 구형 자바스크립트에는 그에 상응하는 코드가 없기 때문이다. 
+- 따라서 babel-polyfill을 설치해야 새로운 기능을 사용할 수 있다.
+- $ npm install @babel/polyfill
 
 ## 6. dependencies vs devDependencies
 - dependencies: 프로젝트가 실행되기 위해 필요한 것.
@@ -81,3 +90,4 @@
 ---  
 ### 참고
 - [Jbee - \(번역\)Babel에 대한 모든 것 ](https://jaeyeophan.github.io/2017/05/16/Everything-about-babel/)
+- [zerocho - BabelJS(바벨)](https://www.zerocho.com/category/ECMAScript/post/57a830cfa1d6971500059d5a)
