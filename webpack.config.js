@@ -34,7 +34,7 @@ const config = {
             }
           },
           {
-            loader: "sass-loader"
+            loader: "sass-loader" // scss -> css로 변환
           }
         ])
       }
