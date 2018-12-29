@@ -16,7 +16,7 @@ $ npm i -g webpack webpack-cli && npm i -D webpack webpack-cli
 
 - webpack.config.js 파일을 생성한다.
 - webpack.config.js는 모던 자바스크립트가 아니라서 모던 자바스크립트 문법을 사용할 수 없다(ex.import, export default xxx;)
-- [webpack.config.js파일 참고](.webpack.config.js)
+- [webpack.config.js파일 참고](https://github.com/yoojh9/youtube-clone/blob/webpack/webpack.config.js)
 - webpack을 실행하게 되면 자동으로 webpack.config.js 파일을 찾는다.
 - package.json의 scripts로 와서 start 명령을 변경한다.
 
@@ -124,6 +124,8 @@ $ npm install -D css-loader postcss-loader sass-loader
 - \$ npm install -D babel-loader
 - [babel/polyfill 설명 참고](https://github.com/yoojh9/youtube-clone/blob/expressjs/README.md#5-3-babel-polyfill)
 - [babel/polyfill 사용법](https://babeljs.io/docs/en/babel-polyfill)
+
+<br><br>
 
 ## 6. 실행 방법
 
