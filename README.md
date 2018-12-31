@@ -16,6 +16,9 @@ Cloning Youtube with Vanila and NodeJS
 ### 5. webpack
 - [webpack branch 참고](https://github.com/yoojh9/youtube-clone/tree/webpack)
 
+### 6. styling
+- [styling branch 참고](https://github.com/yoojh9/youtube-clone/tree/styling)
+
 ## Pages:
 - [x] Home
 - [x] Join
