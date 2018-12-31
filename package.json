@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "cloning youtube with vanila and node.js",
   "scripts": {
-    "dev:server": "nodemon --exec babel-node init.js --delay 2",
+    "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore ['assets/*.scss', 'static/styles.css'] ",
     "dev:assets": "WEBPACK_ENV=development webpack -w",
     "build:assets": "WEBPACK_ENV=production webpack"
   },
