@@ -10,8 +10,7 @@
 
 ## 2. nodemon ignore 옵션 추가
 
-- scss 변경 사항이 있을 때마다 서버가 재시작되므로 package.json 내 scripts에 dev:server 부분에 ignore 옵션을 추가한다 "--ignore ['assets/*.scss', 'static/styles.css']"
-- 노마드코더는 "--ignore 'scss'"로 작성했는데 styles.css가 변경되도 서버가 재시작하는 것 같아 styles.css도 ignore 옵션으로 추가했다.
+- scss 변경 사항이 있을 때마다 서버가 재시작되므로 package.json 내 scripts에 dev:server 부분에 ignore 옵션을 추가한다 "--ignore 'assets/scss'"
 
 ---
 
