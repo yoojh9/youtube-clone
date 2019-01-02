@@ -17,14 +17,15 @@ export const search = async (req, res) => {
   const {
     query: { term: searchingBy }
   } = req;
+  let videos = [];
   try {
-    const videos = await Video.find({ title: searchingBy });
-    res.render("search", { pageTitle: "Search", searchingBy, videos });
+    videos = await Video.find({ title: { $regex: searchingBy, $options: "i" } }); // i : 대소문자 구분 안함
   } catch (error) {
     console.log(error);
-    res.redirect(routes.home);
   }
   // searchingBy: searchingBy 와 같이 property 이름과 변수 이름이 같을 경우 searchingBy 하나로 표현
+  res.render("search", { pageTitle: "Search", searchingBy, videos });
+  
 };
 export const getUpload = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
