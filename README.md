@@ -1,17 +1,35 @@
 # youtube-clone
 
-## 1. SASS
+## 1. PassportJS
 
-- selector를 father요소 안에 넣을 수 있음.
-- 예를 들어 기존 css 작성 시 .header.header\_\_wrapper{}라고 작성했다면, sass를 이용하면 .header{.header\_\_wrapper{}}로 작성한다.
-- 또한 .header\_\_column:last-child{} 로 작성했던 것을 .header\_\_column{ &:last-child{}} 로 작성할 수 있다.
-- 더 명확하고 보기 좋은 코딩을 가능하게 한다.
-- [header.scss참고](https://github.com/yoojh9/youtube-clone/blob/styling/assets/scss/partials/header.scss)
+- [PassportJS](http://www.passportjs.org/)는 node.js 용 미들웨어로 사용자 인증을 구현시켜 준다
+- 인증 쿠키를 생성하고 브라우저에 저장함
 
-## 2. nodemon ignore 옵션 추가
+```
+$ npm install passport
+```
 
-- scss 변경 사항이 있을 때마다 서버가 재시작되므로 package.json 내 scripts에 dev:server 부분에 ignore 옵션을 추가한다 "--ignore 'assets/scss'"
+
+## 2. passport-local-mongoose
+- [passport-local-mongoose](https://github.com/saintedlama/passport-local-mongoose)는 mongoose 플러그인으로 패스워드 로그인, 패스워드 변경, 패스워드 생성, 패스워드 암호화 등을 해준다
+
+```
+$ npm install passport-local-mongoose
+```
 
 ---
+
+
+## 3. strategy
+strategy 란 로그인 방식을 의미한다.
+
+#### 1. passport-local
+- username과 password를 쓰는 사용자 인증 방식(strategy)를 의미한다
+- [local strategy](http://www.passportjs.org/docs/username-password/)방식 사용 방법 참고
+- 하지만 passport-local-mongoose 플러그인을 이용하면 위의 링크 대신 [User.createStrategy();](https://github.com/saintedlama/passport-local-mongoose#static-methods) 한 줄로 local strategy 방식을 설정할 수 있다.
+
+```
+$ npm install passport-local
+```
 
 ### 참고
