@@ -9,6 +9,7 @@
 $ npm install passport
 ```
 
+<br>
 
 ## 2. passport-local-mongoose
 - [passport-local-mongoose](https://github.com/saintedlama/passport-local-mongoose)는 mongoose 플러그인으로 패스워드 로그인, 패스워드 변경, 패스워드 생성, 패스워드 암호화 등을 해준다
@@ -17,8 +18,7 @@ $ npm install passport
 $ npm install passport-local-mongoose
 ```
 
----
-
+<br>
 
 ## 3. strategy
 strategy 란 로그인 방식을 의미한다.
@@ -32,4 +32,6 @@ strategy 란 로그인 방식을 의미한다.
 $ npm install passport-local
 ```
 
+
+---
 ### 참고
