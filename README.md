@@ -19,7 +19,7 @@ Cloning Youtube with Vanila and NodeJS
 ### 6. styling
 - [styling branch 참고](https://github.com/yoojh9/youtube-clone/tree/styling)
 
-### 6. authentication
+### 7. authentication
 - [authentication branch 참고](https://github.com/yoojh9/youtube-clone/tree/authentication)
 
 ## Pages:
